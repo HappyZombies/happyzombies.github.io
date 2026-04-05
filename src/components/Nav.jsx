@@ -1,4 +1,4 @@
-import { AppBar, Link, Toolbar, Typography, Container, Box } from "@mui/material"
+import { AppBar, Link, Toolbar, Typography, Container } from "@mui/material"
 import { Outlet } from "react-router-dom";
 import { Link as LinkRouter } from "react-router-dom";
 import { styled } from "@mui/material/styles";
@@ -13,8 +13,7 @@ const Nav = () => {
     return (
         <Container maxWidth="md">
             <AppBar color="transparent" position="static" elevation={0} sx={{ paddingBottom: "0.5rem" }}>
-                <Toolbar sx={{ padding: "0!important" }}>
-                    <Box sx={{ flexGrow: 1 }} />
+                <Toolbar sx={{ padding: "0!important", justifyContent: "flex-end" }}>
                     <StyledTypography>
                         <Link component={LinkRouter} to="/" color="secondary" underline="always">
                             /home
@@ -37,9 +36,9 @@ const Nav = () => {
                     </StyledTypography>
                 </Toolbar>
             </AppBar>
-            <div style={{ paddingBottom: "4em" }}>
+            <Container sx={{ paddingBottom: "2em" }}>
                 <Outlet />
-            </div>
+            </Container>
         </Container>
     )
 }

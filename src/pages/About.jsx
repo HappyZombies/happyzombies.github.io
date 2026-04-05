@@ -1,5 +1,6 @@
 import { Typography, Link, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { Helmet } from "react-helmet-async";
 
 const StyledContainer = styled(Container)(() => ({
     "& .MuiTypography-root": {
@@ -10,6 +11,7 @@ const StyledContainer = styled(Container)(() => ({
 function About() {
     return (
         <>
+            <Helmet title="Daniel Reguero Blog | About" />
             <Typography variant="h4" align="center" gutterBottom>About</Typography>
             <StyledContainer maxWidth="md">
                 <Typography gutterBottom>

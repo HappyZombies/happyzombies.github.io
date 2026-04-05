@@ -1,5 +1,6 @@
 import { Container, Grid, Link, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { Link as LinkRouter } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import routes from "../routes";
 
@@ -27,6 +28,7 @@ const RouteLinkList = ({ route }) => {
 const Home = () => {
     return (
         <Container>
+            <Helmet title='Daniel Reguero Blog' />
             <Grid sx={{minHeight: "100vh"}} container spacing={0} alignItems="center" justifyItems="center">
                 <Grid item xs={12}>
                     <Typography variant="h3" align="center" gutterBottom>Daniel Reguero</Typography>
