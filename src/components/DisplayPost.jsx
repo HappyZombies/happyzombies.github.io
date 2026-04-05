@@ -29,7 +29,7 @@ function DisplayPost({ type }) {
             })
             return;
         }
-    })
+    }, [type, params.id])
 
     if (markdownError) {
         return (
@@ -49,9 +49,10 @@ function DisplayPost({ type }) {
                         a: ({ node, ...props }) => <Link color="secondary" {...props} />,
                         code({ node, inline, className, children, ...props }) {
                             const match = /language-(\w+)/.exec(className || '');
+                            const codeString = (Array.isArray(children) ? children.join('') : String(children ?? '')).replace(/\n$/, '');
                             return !inline && match ? (
                                 <SyntaxHighlighter
-                                    children={String(children).replace(/\n$/, '')}
+                                    children={codeString}
                                     style={a11yDark}
                                     language={match[1]}
                                     PreTag="div"
@@ -59,7 +60,7 @@ function DisplayPost({ type }) {
                                 />
                             ) : (
                                 <SyntaxHighlighter
-                                    children={String(children).replace(/\n$/, '')}
+                                    children={codeString}
                                     style={a11yDark}
                                     PreTag="span"
                                     customStyle={{ padding: "2px 5px", backgroundColor: "#2c3437" }}
