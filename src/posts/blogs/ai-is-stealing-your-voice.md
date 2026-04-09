@@ -1,6 +1,6 @@
 ---
 title: 'AI is Stealing Your Voice'
-date: '2026-04-04'
+date: '2026-04-09'
 category: ai, blogging
 summary: "Don't let AI take away the thing that makes us the most human, our voice."
 ---
